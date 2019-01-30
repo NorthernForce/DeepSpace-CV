@@ -8,7 +8,7 @@
 #include <stdlib.h>
 
 int main() {
-	cv::VideoCapture cap(0);
+	cv::VideoCapture cap(2);
 
 	/*
 	 * Must run "opkg install v4l-utils" on the roborio
@@ -16,7 +16,7 @@ int main() {
 	 * Also, use -l to list the controls
 	 *     - Valid exposures are "5, 10, 20, 39, 78, 156, 312, 625, 1250, 2500, 5000, 10000, 20000"
 	 */
-	system("v4l2-ctl -d 0 -c exposure_auto=1,exposure_absolute=10");
+	system("v4l2-ctl -d 2 -c exposure_auto=1,exposure_absolute=10");
 
 	cv::Mat frame;
 	cv::namedWindow("Plain", cv::WINDOW_AUTOSIZE);
